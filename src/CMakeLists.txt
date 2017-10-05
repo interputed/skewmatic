@@ -1,6 +1,8 @@
 add_executable(skewmatic skewmatic.cpp)
 
-target_link_libraries(cvtapp
+add_library(TileThreader TileThreader.cpp)
+
+target_link_libraries(skewmatic
 	boost_program_options
     boost_filesystem
     boost_regex
@@ -11,5 +13,6 @@ target_link_libraries(cvtapp
     opencv_core
     opencv_imgproc
     opencv_highgui
-	pthread
+    pthread
+    TileThreader
 )
