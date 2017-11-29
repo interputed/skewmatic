@@ -51,10 +51,10 @@ class Parameters {
         } else {
             verbose = false;
         }
-        const std::string temp1 = vm["input"].as<std::string>();
+        const std::string temp1(vm["input"].as<std::string>());
         input_file = InputValidation(temp1);
         angle = vm["rotate"].as<int>();
-        const std::string temp2 = vm["append_name"].as<std::string>();
+        const std::string temp2(vm["append_name"].as<std::string>());
         output_file = OutputValidation(input_file, temp2, angle);
         scale = vm["scale"].as<double>();
         tile_dim = vm["tile_dim"].as<int>();
