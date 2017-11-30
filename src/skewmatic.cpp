@@ -15,13 +15,13 @@ int main(int argc, char **argv)
             ("input,i", po::value<std::string>()->required(), "Required: Input image filename")
             ("rho", po::value<double>()->default_value(1), "Distance resolution of the accumulator in pixels.")
             ("theta", po::value<double>()->default_value(CV_PI / 90), "Angle resolution of the accumulator in radians.")
-            ("thresh", po::value<int>()->default_value(200), "Number of votes required to detect a line.")
-            ("min_length", po::value<double>()->default_value(500), "Shorter lines than this are rejected.")
+            ("thresh", po::value<int>()->default_value(100), "Number of votes required to detect a line.")
+            ("min_length", po::value<double>()->default_value(175), "Shorter lines than this are rejected.")
             ("max_gap", po::value<double>()->default_value(1), "Max allowed gap between points on line to link them.")
             ("append_name", po::value<std::string>()->default_value("_mask"), "If output filename not given, inserts this value to end of filename, before the extension.")
             ("tile_dim", po::value<int>()->default_value(1024), "Width of tiles to process within image in pixels.")
             ("buffer", po::value<int>()->default_value(512), "Additional buffer size to process outside of tile boundary.")
-            ("elem_radius", po::value<int>()->default_value(17), "Element dimensions for erode and dilate operations.")
+            ("elem_radius", po::value<int>()->default_value(21), "Element dimensions for erode and dilate operations.")
             ("elem_iter", po::value<int>()->default_value(1), "Number of times to perform erode & dilate operations.");
             
         // Positional Options

@@ -140,7 +140,8 @@ void TileThreader::Mask(cvt::cvTile<unsigned char> &inTile, cvt::cvTile<unsigned
 
     cv::Mat houghMat = cv::Mat::zeros(inTile.getSize().height, inTile.getSize().width, CV_8U);
 
-    if (lines.size() > 4) {
+    // Only write lines if there's enough lines found to likely contain a skew
+    if (lines.size() > 120) {
         const unsigned char LINE_WIDTH = 150;
         for (auto &l : lines) {
             // Color of Line, thickness, CV_AA -> antialiased line
